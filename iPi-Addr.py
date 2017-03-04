@@ -11,7 +11,9 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(25, GPIO.IN)
 
 def execute():
-  objProc = subprocess.Popen(shlex.split("date"))
+  objProc = subprocess.Popen(shlex.split("sudo python i2c_lib.py"))
+  objProc = subprocess.Popen(shlex.split("sudo python lcddriver.py"))
+  objProc = subprocess.Popen(shlex.split("sudo python lcd.py"))
 
 try:
   GPIO.wait_for_edge(25, GPIO.FALLING)
