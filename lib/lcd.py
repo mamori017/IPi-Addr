@@ -1,5 +1,6 @@
 # coding:utf-8
 
+import time
 import lcddriver
 import socket
 from time import *
@@ -14,9 +15,10 @@ lcd = lcddriver.lcd()
 addr = socket.gethostname()
 ipaddr = socket.gethostbyname(socket.gethostname())
 
-print(addr)
-print(ipaddr)
-
 lcd.lcd_display_string("NAME:" + addr, 1)
 lcd.lcd_display_string("IP:"+ ipaddr, 2)
+
+sleep(5)
+
+lcd.lcd_clear()
 
